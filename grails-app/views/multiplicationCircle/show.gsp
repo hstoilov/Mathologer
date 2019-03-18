@@ -5,7 +5,7 @@
     <style>
     circle, line {
         fill: white;
-        stroke: rgba(255, 0, 0, .7);
+        stroke: #FF0000C0;
         stroke-width: 3px;
     }
 
@@ -15,23 +15,22 @@
         width: 5em;
     }
     </style>
-    <script>
+    <script language="JavaScript">
         function increase(valueName) {
             var input = document.getElementById(valueName);
             input.value = parseInt(input.value) + 1;
         }
-
-        // TODO: add a function to decrease the value
-
+        function decrease(valueName) {
+            var input = document.getElementById(valueName);
+            input.value = parseInt(input.value) - 1;
+        }
     </script>
 </head>
 
 <body>
 <form action="/multiplicationCircle/index">
     <tmpl:up_down_input name="segmentCount" label="Segments" value="${circleInstance.segmentCount}"/>
-
-    <!-- TODO: add an input for the table base -->
-
+    <tmpl:up_down_input name="tableBase" label="Table base" value="${circleInstance.tableBase}"/>
 </form>
 <svg width="400" height="400">
     <circle r="198" cx="200" cy="200"/>
