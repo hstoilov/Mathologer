@@ -15,6 +15,7 @@ class MultiplicationCircleControllerSpec extends Specification implements Contro
         controller.index(model)
         then:
         model.lines.size() == segments
+        // Notice the usage of 'where' here!
         where:
         segments << [0, 1, 10, 100]
     }
